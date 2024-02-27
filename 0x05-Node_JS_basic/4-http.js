@@ -1,16 +1,16 @@
 #!/usr/bin/node
 
-const app = require('node:http');
+const http = require('node:http');
 
 const hostname = '127.0.0.1';
 const port = 1245;
 
-const server = app.createServer((req, res) => {
+const app = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello Holberton School!');
 });
 
-server.listen(port, hostname, () => {});
+app.listen(port, hostname, () => {});
 
 module.export = app;
