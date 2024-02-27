@@ -32,14 +32,16 @@ function countStudents(filename) {
         }
       });
 
+      let output = `Number of students: ${rowCount}`;
       console.log(`Number of students: ${rowCount}`);
       for (const value in uniqueValueCounts) {
         if (Object.prototype.hasOwnProperty.call(uniqueValueCounts, value)) {
           console.log(`Number of students in ${value}: ${uniqueValueCounts[value]}. List: ${firstFieldValues[value].join(', ')}`);
+          output += (`\nNumber of students in ${value}: ${uniqueValueCounts[value]}. List: ${firstFieldValues[value].join(', ')}`);
         }
       }
 
-      resolve(); // Resolve the promise once processing is complete
+      resolve(output); // Resolve the promise once processing is complete
     });
   });
 }
