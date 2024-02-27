@@ -25,7 +25,7 @@ function countStudents(filename) {
       }
     });
 
-    console.log(`Number of students: ${rowCount - 1}`);
+    console.log(`Number of students: ${rowCount}`);
     for (const value in uniqueValueCounts) {
       if (Object.prototype.hasOwnProperty.call(uniqueValueCounts, value)) {
         console.log(`Number of students in ${value}: ${uniqueValueCounts[value]}. List: ${firstFieldValues[value].join(', ')}`);
