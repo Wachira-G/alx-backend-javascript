@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function calculatedNumber(type, a, b) {
+function calculateNumber(type, a, b) {
   const roundedA = Math.round(a);
   const roundedB = Math.round(b);
 
@@ -16,4 +16,4 @@ function calculatedNumber(type, a, b) {
   }
 }
 
-module.exports = calculatedNumber;
+module.exports = calculateNumber;
