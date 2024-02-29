@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const {expect} = require('chai');
+const { expect } = require('chai');
 const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', () => {
-  context('#SUM', () => {
+  describe('#SUM', () => {
     it('should return the sum of rounded numbers', () => {
       expect(calculateNumber('SUM', 1, 1)).to.equal(2);
     });
@@ -18,7 +18,7 @@ describe('calculateNumber', () => {
     });
   });
 
-  context('#SUBTRACT', () => {
+  describe('#SUBTRACT', () => {
     it('should return the difference of rounded numbers', () => {
       expect(calculateNumber('SUBTRACT', 1, 1)).to.equal(0);
     });
@@ -34,9 +34,9 @@ describe('calculateNumber', () => {
     it('should return the difference of rounded numbers', () => {
       expect(calculateNumber('SUBTRACT', 1.1, 3.0)).to.equal(-2);
     });
-  })
+  });
 
-  context('#DIVIDE', () => {
+  describe('#DIVIDE', () => {
     it('should return the result of division of rounded numbers', () => {
       expect(calculateNumber('DIVIDE', 1, 2)).to.equal(0.5);
     });

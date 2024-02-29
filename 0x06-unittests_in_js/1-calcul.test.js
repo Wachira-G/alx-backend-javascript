@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const assert = require('assert');
-const {it, describe} = require('mocha');
+const { it, describe } = require('mocha');
 const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', () => {
@@ -35,7 +35,7 @@ describe('calculateNumber', () => {
     it('should return the difference of rounded numbers', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 1.1, 3.0), -2);
     });
-  })
+  });
 
   describe('#DIVIDE', () => {
     it('should return the result of division of rounded numbers', () => {
