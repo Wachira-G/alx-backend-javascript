@@ -8,7 +8,9 @@ describe('calculateNumber', () => {
   it('should return the sum of rounded numbers', () => {
 
     assert.strictEqual(calculatedNumber(3.7, 2.3), 6);
+  });
 
+  it('should return the sum of rounded numbers', () => {
     assert.strictEqual(calculatedNumber(5.1, 1.9), 7);
   });
 });
