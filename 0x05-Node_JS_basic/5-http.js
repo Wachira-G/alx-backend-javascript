@@ -16,9 +16,11 @@ const app = http.createServer((req, res) => {
   } else if (method === 'GET' && url === '/students') {
     const databaseFilename = process.argv[2];
 
+    const pretext = 'This is the list of our students\n';
+
     countStudents(databaseFilename)
       .then((responseText) => {
-        const formattedText = `This is the list of our students\n${responseText}`;
+        const formattedText = `${pretext}${responseText}`;
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain');
         res.end(formattedText);
@@ -26,7 +28,11 @@ const app = http.createServer((req, res) => {
       .catch((error) => {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'text/plain');
-        res.end(`Internal Server Error: ${error.message}`);
+        if (!databaseFilename) {
+          res.end(`${pretext}Cannot load the database`);
+        } else {
+          res.end(`${pretext}${error.message}`);
+        }
       });
   } else {
     res.statusCode = 404;
