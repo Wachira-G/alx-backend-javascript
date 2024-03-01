@@ -1,7 +1,5 @@
 #!/usr/bin/node
 
-const readline = require('readline');
-
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 process.stdin.on('readable', () => {
@@ -12,5 +10,5 @@ process.stdin.on('readable', () => {
 });
 
 process.stdin.on('end', () => {
-    process.stdout.write('This important software is now closing\n');
+  process.stdout.write('This important software is now closing\n');
 });
