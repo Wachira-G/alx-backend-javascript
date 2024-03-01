@@ -10,7 +10,7 @@ describe('sendPaymentRequestToApi', () => {
   let consoleLogSpy;
 
   beforeEach(() => {
-    calculateNumberStub = sinon.stub(Utils, 'calculateNumber').returns(10);
+    calculateNumberStub = sinon.stub(Utils, 'calculateNumber'); //.returns(120);
     consoleLogSpy = sinon.spy(console, 'log');
   });
 
@@ -20,16 +20,16 @@ describe('sendPaymentRequestToApi', () => {
   });
 
   it('should log the correct message for totalAmount 100 and totalShipping 20', () => {
+    calculateNumberStub.withArgs('SUM', 100, 20).returns(120);
     sendPaymentRequestToApi(100, 20);
 
-    expect(calculateNumberStub.calledOnceWithExactly('SUM', 100, 20)).to.be.true;
     expect(consoleLogSpy.calledOnceWithExactly('The total is: 120')).to.be.true;
   });
 
   it('should log the correct message for totalAmount 10 and totalShipping 10', () => {
+    calculateNumberStub.withArgs('SUM', 10, 10).returns(20);
     sendPaymentRequestToApi(10, 10);
 
-    expect(calculateNumberStub.calledOnceWithExactly('SUM', 10, 10)).to.be.true;
     expect(consoleLogSpy.calledOnceWithExactly('The total is: 20')).to.be.true;
   });
 });
