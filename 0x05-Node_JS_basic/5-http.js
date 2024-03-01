@@ -29,7 +29,8 @@ const app = http.createServer((req, res) => {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'text/plain');
         if (!databaseFilename) {
-          res.end(`${pretext}Cannot load the database`);
+          res.end(`This is the list of our students
+Cannot load the database`);
         } else {
           res.end(`${pretext}${error.message}`);
         }
