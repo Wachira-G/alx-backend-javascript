@@ -10,12 +10,12 @@ const read = readline.createInterface({
 
 const isPipedInput = !process.stdin.isTTY;
 
-console.log('Welcome to Holberton School, what is your name?');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 read.on('line', (input) => {
   console.log('Your name is:', input);
   if (isPipedInput) {
-    console.log('This important software is now closing');
+    process.stdout.write('This important software is now closing\n');
     read.close();
   }
 });
