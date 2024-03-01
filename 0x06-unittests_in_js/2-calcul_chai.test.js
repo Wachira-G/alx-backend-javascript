@@ -4,7 +4,7 @@ const { expect } = require('chai');
 const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', () => {
-  describe('#SUM', () => {
+  describe('type=SUM', () => {
     it('should return the sum of rounded numbers', () => {
       expect(calculateNumber('SUM', 1, 1)).to.equal(2);
     });
@@ -18,7 +18,7 @@ describe('calculateNumber', () => {
     });
   });
 
-  describe('#SUBTRACT', () => {
+  describe('type=SUBTRACT', () => {
     it('should return the difference of rounded numbers', () => {
       expect(calculateNumber('SUBTRACT', 1, 1)).to.equal(0);
     });
@@ -36,7 +36,7 @@ describe('calculateNumber', () => {
     });
   });
 
-  describe('#DIVIDE', () => {
+  describe('type=DIVIDE', () => {
     it('should return the result of division of rounded numbers', () => {
       expect(calculateNumber('DIVIDE', 1, 2)).to.equal(0.5);
     });
@@ -51,6 +51,10 @@ describe('calculateNumber', () => {
 
     it('should return the result of division of rounded numbers', () => {
       expect(calculateNumber('DIVIDE', 1.1, 3.0)).to.equal(0.3333333333333333);
+    });
+
+    it('should return the result of division of rounded numbers', () => {
+      expect(calculateNumber('DIVIDE', 1, 0)).to.equal('Error');
     });
   });
 });
